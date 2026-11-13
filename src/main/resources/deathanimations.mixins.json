@@ -1,0 +1,12 @@
+{
+	"required": true,
+	"package": "dev.deathanim.mixin",
+	"compatibilityLevel": "JAVA_21",
+	"minVersion": "0.8",
+	"client": [
+		"DeathScreenMixin"
+	],
+	"injectors": {
+		"defaultRequire": 1
+	}
+}

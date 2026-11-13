@@ -1,23 +1,23 @@
-# Death Animations
+# Death Animations (NeoForge 1.21.1)
 
-Cartoon death animations for Minecraft (Fabric, Minecraft 26.3, Java 25).
+Cartoon death animations for Minecraft, based on how you died. NeoForge 21.1, Minecraft 1.21.1, Java 21. Client-side only.
 
 ## Status
-- [x] Animation data for 6 deaths (fall, stalagmite, anvil, cactus, fire, drown) in `src/main/resources/assets/deathanimations/clips/`
-- [x] Pure-Java sampler + death router, checked against the browser prototype (`src/test/.../CoreCheck.java`)
+- [x] Animation data for 6 deaths (fall, stalagmite, anvil, cactus, fire, drown): `src/main/resources/assets/deathanimations/clips/`
+- [x] Pure-Java sampler + death router, checked against the browser prototype (`src/test/.../CoreCheck.java`, runs in every build)
 - [ ] Death detection hook (written, not yet compiled against Minecraft)
-- [ ] 3D player model playback on the death screen
+- [x] `/deathanim <name>` plays an animation in 3D on your skin (body motion, red tint, ash, flash). Not compiled yet.
+- [ ] Props in 3D (stalagmite, anvil, cactus, flames, water), face swaps, stars
+- [ ] Auto-play when you actually die
 
 ## Build on GitHub (no setup)
-Push this folder to a GitHub repo. The `build` workflow compiles the mod on every push; open the run in the Actions tab and download `death-animations-jar`. Push a tag like `v0.1.0` to get a Release with the jar attached. If the run fails, open it and copy the first error.
+Push this folder to a GitHub repo. The `build` workflow compiles the mod on every push; open the run in the Actions tab and download `death-animations-jar`. Push a tag like `v0.1.0` for a Release with the jar attached. If a run fails, copy the first error.
 
-## Run it locally (optional)
-1. Install JDK 25 and IntelliJ IDEA 2025.3 or newer.
-2. Open this folder in IntelliJ and let Gradle sync.
-3. Run `./gradlew runClient`, start a world, and die (fall from a height).
-4. Check the game log for a line starting with `Death Animations: died with message key`.
+## Try it
+Put the jar in your NeoForge 1.21.1 `mods` folder, start a world and die (fall from a height). The game log should contain `Death Animations: died with message key`.
 
-If the build fails, copy the first error message back to Claude.
+## Commands
+`/deathanim` lists the animations, `/deathanim stalagmite` plays one. Space replays, Esc closes.
 
 ## Editing animations
 Keyframes live in `tools/export_clips.js`. After changing them run `node tools/export_clips.js`.

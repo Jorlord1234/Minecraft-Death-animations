@@ -58,6 +58,21 @@ public final class CoreCheck {
 			eq(at + "eyes", p.get(Prop.EYES), r[6]);
 			eq(at + "x", p.get(Prop.X), r[7]);
 		}
+		// Rig: walking and hopping layers
+		Pose w = new Pose();
+		w.set(Prop.WALK, 1);
+		w.set(Prop.HOP, 1);
+		Rig rig = new Rig();
+		rig.solve(w, Math.PI / 28); // sin(14t) = 1
+		eq("walk legF", rig.legF, 28);
+		eq("walk legB", rig.legB, -28);
+		eq("walk armF", rig.armF, -18 + 25 * Math.sin(Math.PI / 28 * 11));
+		rig.solve(w, Math.PI / 22); // sin(11t) = 1
+		eq("hop y", rig.y, -30);
+		Pose idle = new Pose();
+		rig.solve(idle, 1.234);
+		eq("idle legF", rig.legF, 0);
+		eq("idle y", rig.y, 0);
 		String[][] routes = {
 			{"death.attack.fall", "fall"}, {"death.attack.fall.player", "fall"}, {"death.fell.accident.ladder", "fall"},
 			{"death.attack.fallingBlock", null}, {"death.attack.stalagmite", "stalagmite"},
