@@ -1,0 +1,25 @@
+{
+	"schemaVersion": 1,
+	"id": "deathanimations",
+	"version": "${version}",
+	"name": "Death Animations",
+	"description": "Cartoon death animations that play when you die, based on how you died.",
+	"authors": ["You and Claude"],
+	"license": "CC0-1.0",
+	"environment": "client",
+	"entrypoints": {
+		"client": ["dev.deathanim.client.DeathAnimationsClient"]
+	},
+	"mixins": [
+		{
+			"config": "deathanimations.client.mixins.json",
+			"environment": "client"
+		}
+	],
+	"depends": {
+		"fabricloader": ">=0.20.1",
+		"minecraft": "~26.3",
+		"java": ">=25",
+		"fabric-api": "*"
+	}
+}
