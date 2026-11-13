@@ -7,7 +7,8 @@ Cartoon death animations for Minecraft, based on how you died. NeoForge 21.1, Mi
 - [x] Pure-Java sampler + death router, checked against the browser prototype (`src/test/.../CoreCheck.java`, runs in every build)
 - [ ] Death detection hook (written, not yet compiled against Minecraft)
 - [x] `/deathanim <name>` plays an animation in 3D on your skin (body motion, red tint, ash, flash). Not compiled yet.
-- [ ] Props in 3D (stalagmite, anvil, cactus, flames, water), face swaps, stars
+- [x] Settings (cave, underwater, desert) and 3D props (stalagmite + stalactites, anvil, cactus, flames, stars, bubbles). Not compiled yet.
+- [ ] Face swaps (wide eyes, X eyes), cactus spikes
 - [ ] Auto-play when you actually die
 
 ## Build on GitHub (no setup)
