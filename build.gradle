@@ -79,3 +79,15 @@ publishing {
 		// retrieving dependencies.
 	}
 }
+tasks.named('test') {
+	enabled = false
+}
+
+tasks.register('coreCheck', JavaExec) {
+	classpath = sourceSets.test.runtimeClasspath
+	mainClass = 'dev.deathanim.core.CoreCheck'
+}
+
+tasks.named('check') {
+	dependsOn 'coreCheck'
+}
